@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Планирование закупок · прототип v6</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<a class="skip" href="#main" id="skip">К основному содержимому</a>
+<div class="app">
+  <nav class="nav" aria-label="Разделы">
+    <div class="brand">Планирование закупок</div>
+    <div class="nav-links" id="nav-links"></div>
+    <div class="nav-foot" id="nav-foot">Прототип v6 · данные выгрузки · названия условные, коды из данных</div>
+  </nav>
+  <div class="col">
+    <header class="top">
+      <h1 id="title">Главная</h1>
+      <div class="top-run" id="top-run"></div>
+      <button class="btn" id="btn-recalc" type="button"></button>
+      <button class="btn" id="btn-agent" type="button" aria-controls="agent"></button>
+    </header>
+    <main id="main" tabindex="-1"></main>
+  </div>
+</div>
+
+<div class="scrim" id="scrim" hidden></div>
+<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="d-title" hidden>
+  <div class="drawer-head">
+    <div class="drawer-title"><h2 id="d-title"></h2><span class="sub" id="d-sub"></span></div>
+    <button class="btn btn-icon" id="d-close" type="button" aria-label="Закрыть карточку"></button>
+  </div>
+  <div class="drawer-body" id="d-body" tabindex="0" aria-label="Содержимое карточки"></div>
+  <div class="drawer-foot" id="d-foot"></div>
+</div>
+
+<div class="modal-wrap" id="modal-wrap" hidden>
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="m-title">
+    <div class="modal-head"><h2 id="m-title"></h2><button class="btn btn-icon" id="m-close" type="button" aria-label="Закрыть окно"></button></div>
+    <div class="modal-body" id="m-body" tabindex="0" aria-label="Содержимое окна"></div>
+    <div class="modal-foot" id="m-foot"></div>
+  </div>
+</div>
+
+<div class="agent" id="agent" role="complementary" aria-label="Агент" hidden></div>
+<div class="toast" id="toast" hidden></div>
+<div class="sr" id="say" role="status" aria-live="polite"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="icons.js"></script>
+<script src="data.js"></script>
+<script src="engine.js"></script>
+<script src="agent-mock.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
